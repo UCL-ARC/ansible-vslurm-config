@@ -1,0 +1,8 @@
+---
+- name: Test SSH connection
+  hosts: all
+
+  tasks:
+  - name: My name is
+    ansible.builtin.command: hostname
+    remote_user: "{{ cluster_vars.username }}"
