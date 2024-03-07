@@ -7,7 +7,7 @@ Draws from [TACC/virtual-slurm-cluster](https://github.com/TACC/virtual-slurm-cl
 
 ## Setup
 
-The playbook expects an inventory with the following groups and variables. There may be more hosts within each group.
+The playbook expects an inventory with the following groups and variables. There may be more hosts within each group. Paths are expected to be absolute.
 
 ```yaml
 all:
@@ -35,15 +35,16 @@ all:
   vars:
     cluster_vars:
       cluster_name: "" # The name of the cluster, e.g. "vslurm"
-      mysql_socket: "" # Path to the mysql socket.
+      mysql_socket: "" # Path to the mysql socket
       log_dir: "" # Path to the log directory. Usually "/var/log"
       slurm_dir: "" # Path to the Slurm directory. Usually "/etc/slurm"
       munge_dir: "" # Path to the munge directory. Usually "/etc/munge"
       epel9_gpg_key_url: "" # URL
       epel9_rpm_url: "" # URL
       username: "" # An existing user on the hosts
-      user_home: "" # Path to the user's home directory. Usually "/home/{{ username}}"
+      user_home: "" # Path to the user's home directory. Usually "/home/username"
       root_home: "" # Path to the root user's home directory. Usually "/root"
+      ssh_rsa_key_path: "" # Path to a private ssh key
     proxy_env:
       NO_PROXY: "" # URL
       http_proxy: "" # URL
