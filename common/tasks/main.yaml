@@ -11,7 +11,7 @@
 
 - name: Copy RSA key
   ansible.builtin.copy:
-    src: "{{ cluster_vars.root_home }}/.ssh/id_rsa"
+    src: "{{ cluster_vars.ssh_rsa_key_path }}"
     dest: "{{ cluster_vars.user_home }}/.ssh/id_rsa"
     owner: "{{ cluster_vars.username }}"
     group: "{{ cluster_vars.username }}"
