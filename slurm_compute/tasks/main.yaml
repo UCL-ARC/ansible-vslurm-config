@@ -15,7 +15,7 @@
 
 - name: Configure Slurmd
   ansible.builtin.shell:
-    cmd: echo "SLURMD_OPTIONS=-Z --conf-server {{ hostvars['server']['ansible_facts']['nodename'] }}" > /etc/sysconfig/slurmd
+    cmd: echo "SLURMD_OPTIONS=-Z --conf-server {{ hostvars['server']['ansible_facts']['nodename'] }} --conf \"State=CLOUD\"" > /etc/sysconfig/slurmd
   args:
     creates: "/etc/sysconfig/slurmd"
 
