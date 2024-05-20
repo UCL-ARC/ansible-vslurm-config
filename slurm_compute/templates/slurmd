@@ -1,0 +1,1 @@
+SLURMD_OPTIONS=-Z --conf-server {{ hostvars['server']['ansible_facts']['nodename'] }}
