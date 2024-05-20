@@ -3,6 +3,7 @@
 - name: Set the hostname
   ansible.builtin.hostname:
     name: "{{ inventory_hostname }}"
+  tags: common_init
 
 - name: Copy Cluster Hosts File
   ansible.builtin.copy:
