@@ -17,7 +17,7 @@
     mode: 0755
 
 - name: NFS Export Configuration File
-  ansible.builtin.template:
+  ansible.builtin.copy:
     src: exports
     dest: /etc/exports
     owner: root
